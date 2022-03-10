@@ -21,6 +21,10 @@ GAMMA = _np.array([1.0, 1.0, 0.5, 1.0, 1.0, 1.0])
 
 @_numba.jit(nopython=True, nogil=True)
 def _sum_and_center_of_mass(spot, size):
+    """ convolves spot and a matrix where
+        each entry the location.
+    """  
+    
     x = 0.0
     y = 0.0
     _sum_ = 0.0
@@ -36,6 +40,10 @@ def _sum_and_center_of_mass(spot, size):
 
 @_numba.jit(nopython=True, nogil=True)
 def mean_filter(spot, size):
+    """ 
+        
+        
+    """ 
     filtered_spot = _np.zeros_like(spot)
     for k in range(size):
         for l in range(size):
